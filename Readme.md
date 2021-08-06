@@ -6,7 +6,7 @@ Main URL : https://localhost:5000/
 
 **POST api/candidate**
 
-{__
+{ __
 	"name": "Rakesh",__
 	"email": "rakesh@gmail.com"__
 }__
