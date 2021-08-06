@@ -45,15 +45,15 @@ Additional Rule
  - The email should be valid email address.
  - The email should exist in the database.
  - Scores already existing can not be rewritten.
- - Scores for all the 
+ - Scores for all the tests should be enterred. 
  - The maximum value for test scores should be 10 and minimum should be 0.
 
 ## Querying students with highest scores
 
-**POST api/scores/highest**
+**GET api/scores/highest**
 
 ### Response
-{__
+{<br/>
 &emsp;"result": [<br/>
 &emsp;&emsp;{<br/>
 &emsp;&emsp;&emsp;"name": "Rakesh",<br/>
@@ -64,7 +64,7 @@ Additional Rule
 
 ## Querying average scores of all students
 
-**POST api/scores/average**
+**GET api/scores/average**
 
 ### Response
 
