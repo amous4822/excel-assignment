@@ -6,10 +6,10 @@ Main URL : https://localhost:5000/
 
 **POST api/candidate**
 
-{
-	"name": "Rakesh",
-	"email": "rakesh@gmail.com"
-}
+{ <br/>
+&emsp;"name": "Rakesh",<br/>
+&emsp;"email": "rakesh@gmail.com"<br/>
+}<br/>
 | field | type | description |  
 |--|--|--|
 | name | String | name of the candidate
@@ -25,12 +25,14 @@ Additional Rule
 
 **POST api/candidate**
 
-{
-	"email" : " rakesh@gmail.com ",
-	"first_round": 9,
-	"second_round":9,
-	"third_round":9
-}
+{<br/>
+&emsp;"email" : " rakesh@gmail.com ",<br/>
+&emsp;"first_round": 9,<br/>
+&emsp;"second_round":9,<br/>
+&emsp;"third_round":<br/>
+}<br/>
+
+
 | field | type | description |  
 |--|--|--|
 |email| String| email of the candidate 
@@ -43,34 +45,34 @@ Additional Rule
  - The email should be valid email address.
  - The email should exist in the database.
  - Scores already existing can not be rewritten.
- - Scores for all the 
+ - Scores for all the tests should be enterred. 
  - The maximum value for test scores should be 10 and minimum should be 0.
 
 ## Querying students with highest scores
 
-**POST api/scores/highest**
+**GET api/scores/highest**
 
 ### Response
-{
-&emsp;"result": [
-&emsp;&emsp;{
-&emsp;&emsp;&emsp;"name": "Rakesh",
-&emsp;&emsp;&emsp;"total": 27
-&emsp;&emsp;}
-&emsp;]
-}
+{<br/>
+&emsp;"result": [<br/>
+&emsp;&emsp;{<br/>
+&emsp;&emsp;&emsp;"name": "Rakesh",<br/>
+&emsp;&emsp;&emsp;"total": 27<br/>
+&emsp;&emsp;}<br/>
+&emsp;]<br/>
+}<br/>
 
 ## Querying average scores of all students
 
-**POST api/scores/average**
+**GET api/scores/average**
 
 ### Response
 
-{
-&emsp; "result": {
-&emsp;&emsp;"avg_first_round": 5.666666666666667,
-&emsp;&emsp;"avg_second_round": 5.666666666666667,
-&emsp;&emsp;"avg_third_round": 8.333333333333334
-&emsp;}
+{<br/>
+&emsp; "result": {<br/>
+&emsp;&emsp;"avg_first_round": 5.666666666666667,<br/>
+&emsp;&emsp;"avg_second_round": 5.666666666666667,<br/>
+&emsp;&emsp;"avg_third_round": 8.333333333333334<br/>
+&emsp;}<br/>
 }
 
