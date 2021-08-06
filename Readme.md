@@ -6,10 +6,10 @@ Main URL : https://localhost:5000/
 
 **POST api/candidate**
 
-{ __
-	"name": "Rakesh",__
-	"email": "rakesh@gmail.com"__
-}__
+{ <br/>
+&emsp;"name": "Rakesh",<br/>
+&emsp;"email": "rakesh@gmail.com"<br/>
+}<br/>
 | field | type | description |  
 |--|--|--|
 | name | String | name of the candidate
@@ -25,12 +25,14 @@ Additional Rule
 
 **POST api/candidate**
 
-{__
-	"email" : " rakesh@gmail.com ",__
-	"first_round": 9,__
-	"second_round":9,__
-	"third_round":9__
-}__
+{<br/>
+&emsp;"email" : " rakesh@gmail.com ",<br/>
+&emsp;"first_round": 9,<br/>
+&emsp;"second_round":9,<br/>
+&emsp;"third_round":<br/>
+}<br/>
+
+
 | field | type | description |  
 |--|--|--|
 |email| String| email of the candidate 
@@ -52,13 +54,13 @@ Additional Rule
 
 ### Response
 {__
-&emsp;"result": [__
-&emsp;&emsp;{__
-&emsp;&emsp;&emsp;"name": "Rakesh",__
-&emsp;&emsp;&emsp;"total": 27__
-&emsp;&emsp;}__
-&emsp;]__
-}__
+&emsp;"result": [<br/>
+&emsp;&emsp;{<br/>
+&emsp;&emsp;&emsp;"name": "Rakesh",<br/>
+&emsp;&emsp;&emsp;"total": 27<br/>
+&emsp;&emsp;}<br/>
+&emsp;]<br/>
+}<br/>
 
 ## Querying average scores of all students
 
@@ -66,11 +68,11 @@ Additional Rule
 
 ### Response
 
-{__
-&emsp; "result": {__
-&emsp;&emsp;"avg_first_round": 5.666666666666667,__
-&emsp;&emsp;"avg_second_round": 5.666666666666667,__
-&emsp;&emsp;"avg_third_round": 8.333333333333334__
-&emsp;}__
+{<br/>
+&emsp; "result": {<br/>
+&emsp;&emsp;"avg_first_round": 5.666666666666667,<br/>
+&emsp;&emsp;"avg_second_round": 5.666666666666667,<br/>
+&emsp;&emsp;"avg_third_round": 8.333333333333334<br/>
+&emsp;}<br/>
 }
 
