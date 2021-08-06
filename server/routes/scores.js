@@ -13,15 +13,24 @@ router.post(
   "/",
   [
     check("email", "Please enter a valid email address").isEmail(),
-    check("first_round", "Scores must be a number between 0 and 10").isFloat({
+    check(
+      "first_round",
+      "Scores for first round must be a number between 0 and 10"
+    ).isFloat({
       min: 0,
       max: 10,
     }),
-    check("second_round", "Scores must be a number between 0 and 10").isFloat({
+    check(
+      "second_round",
+      "Scores for the second round must be a number between 0 and 10"
+    ).isFloat({
       min: 0,
       max: 10,
     }),
-    check("third_round", "Scores must be a number between 0 and 10").isFloat({
+    check(
+      "third_round",
+      "Scores for the third round must be a number between 0 and 10"
+    ).isFloat({
       min: 0,
       max: 10,
     }),
@@ -64,6 +73,11 @@ router.post(
   }
 );
 
+/**
+ * @route   GET api/scores/highest
+ * @desc    Getting the highest marks of a candidate
+ * @access  public  */
+
 router.get("/highest", async (req, res) => {
   const result = await Candidate.aggregate([
     {
@@ -95,6 +109,11 @@ router.get("/highest", async (req, res) => {
     .limit(1);
   res.json({ result });
 });
+
+/**
+ * @route   GET api/scores/average
+ * @desc    Getting the average marks of a all rounds.
+ * @access  public  */
 
 router.get("/average", async (req, res) => {
   let totalFirstRound = 0;
