@@ -119,23 +119,39 @@ router.get("/average", async (req, res) => {
   let totalFirstRound = 0;
   let totalSecondRound = 0;
   let totalThirdRound = 0;
-  const result = await Scores.find({});
-  result.map((x) => {
-    totalFirstRound += x.first_round;
-    totalSecondRound += x.second_round;
-    totalThirdRound += x.third_round;
-  });
-
-  totalFirstRound /= result.length;
-  totalSecondRound /= result.length;
-  totalThirdRound /= result.length;
+  const result = await Candidate.aggregate([
+    {
+      $lookup: {
+        from: "test_scores",
+        localField: "_id",
+        foreignField: "candidate",
+        as: "test_scores",
+      },
+    },
+    {
+      $unwind: "$test_scores",
+    },
+    {
+      $project: {
+        _id: 0,
+        name: 1,
+        first: "$test_scores.first_round",
+        second: "$test_scores.second_round",
+        third: "$test_scores.third_round",
+      },
+    },
+    {
+      $group: {
+        _id: 1,
+        avg_first_round: { $avg: "$first" },
+        avg_second_round: { $avg: "$second" },
+        avg_third_round: { $avg: "$third" },
+      },
+    },
+  ]);
 
   res.json({
-    result: {
-      avg_first_round: totalFirstRound,
-      avg_second_round: totalSecondRound,
-      avg_third_round: totalThirdRound,
-    },
+    result,
   });
 });
 
